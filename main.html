@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexaWeb Studio — Professionele Website Kopen (100% Jouw Eigendom)</title>
+  <meta name="description" content="Koop een 100% op maat gemaakte bedrijfswebsite vanaf € 349 eenmalig. Volledig jouw eigendom zonder verplichte maandelijkse kosten. Oplevering binnen 2 tot 7 werkdagen." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, Cormorant Garamond, Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+            cormorant: ['Cormorant Garamond', 'serif'],
+            playfair: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #060913;
+      color: #F8FAFC;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Subtiel donker grid */
+    .dark-grid-bg {
+      background-color: #060913;
+      background-image:
+        linear-gradient(to right, rgba(99, 102, 241, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(99, 102, 241, 0.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Donkere glassmorphism kaarten */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.70);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    /* Pagina wisselaar zonder blokkerende overlays */
+    .app-page {
+      display: none;
+      animation: pageFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .app-page.is-active {
+      display: block;
+    }
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FAQ Accordeon */
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease-out;
+    }
+    .faq-item.is-open .faq-body {
+      max-height: 360px;
+    }
+    .faq-item.is-open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Demo scrollbar */
+    .demo-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .demo-scroll::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.4);
+    }
+    .demo-scroll::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.55);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-indigo-500 selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+
+  <!-- =========================================================
+       1. DISCRETE BEHEERBALK (#03050A)
+  ========================================================== -->
+  <div id="owner-bar-wrapper" class="bg-[#03050A] border-b border-white/10 text-slate-300 relative z-40">
+    <!-- Zwevende herstelknop wanneer beheerbalk verborgen is -->
+    <button id="btn-restore-owner-bar" type="button" title="Toon beheerbalk" aria-label="Toon beheerbalk" class="hidden fixed bottom-5 left-5 z-40 bg-[#0B1120] hover:bg-slate-800 text-slate-200 p-2.5 rounded-full border border-white/15 shadow-lg transition cursor-pointer">
+      <i data-lucide="eye" class="w-4 h-4 text-indigo-400"></i>
+    </button>
+
+    <div id="owner-bar-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+            Beheer
+          </span>
+          <span class="text-slate-400 hidden sm:inline">Pas jouw studionaam, regio en WhatsApp-nummer direct aan (opgeslagen in je browser).</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="btn-toggle-owner-drawer" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white border border-white/10 font-medium transition cursor-pointer">
+            <i data-lucide="pencil" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span>Bewerk Mijn Gegevens</span>
+          </button>
+          <button id="btn-hide-owner-bar" type="button" title="Verberg beheerbalk" aria-label="Verberg beheerbalk" class="inline-flex items-center justify-center p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-white/10 transition cursor-pointer">
+            <i data-lucide="eye-off" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Inline bewerkingspaneel -->
+      <div id="owner-drawer" class="hidden mt-3 pt-3 border-t border-white/10 grid grid-cols-1 sm:grid-cols-4 gap-3 pb-1">
+        <div>
+          <label for="cfg-studio" class="block text-[11px] font-medium text-slate-400 mb-1">Studionaam</label>
+          <input type="text" id="cfg-studio" class="w-full bg-[#0B1120] border border-white/15 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500" placeholder="NexaWeb Studio" />
+        </div>
+        <div>
+          <label for="cfg-region" class="block text-[11px] font-medium text-slate-400 mb-1">Regio</label>
+          <input type="text" id="cfg-region" class="w-full bg-[#0B1120] border border-white/15 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500" placeholder="Limburg & heel Nederland" />
+        </div>
+        <div>
+          <label for="cfg-whatsapp" class="block text-[11px] font-medium text-slate-400 mb-1">WhatsApp-nummer (316...)</label>
+          <input type="text" id="cfg-whatsapp" class="w-full bg-[#0B1120] border border-white/15 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500" placeholder="31612345678" />
+        </div>
+        <div class="flex items-end">
+          <button id="btn-save-owner-settings" type="button" class="w-full bg-[#6366F1] hover:bg-indigo-500 text-white font-semibold py-1.5 px-3 rounded-lg text-xs transition cursor-pointer">
+            Opslaan & Toepassen
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       2. STICKY GLAZEN NAVIGATIEBALK MET 5 KLIKBARE TABS
+  ========================================================== -->
+  <header class="sticky top-0 z-30 bg-[#060913]/85 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- Logo -->
+        <button type="button" data-route="home" class="flex items-center gap-3 text-left group cursor-pointer focus:outline-none">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6366F1] to-[#10B981] flex items-center justify-center text-white shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-white block leading-none" data-bind="studioName">NexaWeb Studio</span>
+            <span class="text-[11px] font-medium text-slate-400 block mt-0.5">100% Eigendom • Vanaf € 349</span>
+          </div>
+        </button>
+
+        <!-- 5 Klikbare Pagina-Tabs (Desktop) -->
+        <nav class="hidden lg:flex items-center gap-1 bg-[#0B1120] p-1.5 rounded-2xl border border-white/10" aria-label="Hoofdnavigatie">
+          <button type="button" data-route="home" class="desktop-nav-tab px-4 py-2 rounded-xl text-sm font-semibold transition cursor-pointer bg-[#6366F1] text-white shadow-sm">
+            Home
+          </button>
+          <button type="button" data-route="demos" class="desktop-nav-tab px-4 py-2 rounded-xl text-sm font-semibold transition cursor-pointer text-slate-400 hover:text-white">
+            Live Demo’s
+          </button>
+          <button type="button" data-route="prijzen" class="desktop-nav-tab px-4 py-2 rounded-xl text-sm font-semibold transition cursor-pointer text-slate-400 hover:text-white">
+            Pakketten & Prijzen
+          </button>
+          <button type="button" data-route="over-ons" class="desktop-nav-tab px-4 py-2 rounded-xl text-sm font-semibold transition cursor-pointer text-slate-400 hover:text-white">
+            Over Ons
+          </button>
+          <button type="button" data-route="starten" class="desktop-nav-tab px-4 py-2 rounded-xl text-sm font-semibold transition cursor-pointer text-slate-400 hover:text-white">
+            Project Starten
+          </button>
+        </nav>
+
+        <!-- Directe WhatsApp-knop + Mobiel Hamburgermenu -->
+        <div class="flex items-center gap-2.5">
+          <a href="#" data-wa-link="Hallo! Ik heb interesse in het kopen van een maatwerk website (100% eigendom). Kunnen we de mogelijkheden bespreken?" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-[#10B981] hover:bg-emerald-400 text-slate-950 text-sm font-bold px-4 py-2.5 rounded-xl shadow-md shadow-emerald-500/15 transition">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>WhatsApp</span>
+          </a>
+
+          <button id="btn-mobile-menu" type="button" aria-label="Open menu" class="lg:hidden p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 border border-white/10 cursor-pointer">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Werkend Mobiel Hamburgermenu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0B1120] border-t border-white/10 px-4 pt-3 pb-5 space-y-1.5 shadow-2xl">
+      <button type="button" data-route="home" class="mobile-nav-tab w-full text-left px-4 py-3 rounded-xl text-sm font-semibold bg-[#6366F1] text-white cursor-pointer">Home</button>
+      <button type="button" data-route="demos" class="mobile-nav-tab w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800/80 cursor-pointer">Live Demo’s</button>
+      <button type="button" data-route="prijzen" class="mobile-nav-tab w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800/80 cursor-pointer">Pakketten & Prijzen (Vanaf € 349)</button>
+      <button type="button" data-route="over-ons" class="mobile-nav-tab w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800/80 cursor-pointer">Over Ons</button>
+      <button type="button" data-route="starten" class="mobile-nav-tab w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-slate-300 hover:bg-slate-800/80 cursor-pointer">Project Starten</button>
+      <div class="pt-2">
+        <a href="#" data-wa-link="Hallo! Ik heb interesse in het kopen van een maatwerk website (100% eigendom)." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-[#10B981] hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded-xl text-sm">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Direct Appen via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       3. HOOFDINHOUD (5 VOLWAARDIGE PAGINA'S)
+  ========================================================== -->
+  <main class="flex-grow">
+
+    <!-- *******************************************************
+         PAGINA 1: HOME
+    ******************************************************** -->
+    <section id="page-home" class="app-page is-active">
+      <!-- Hero Sectie -->
+      <div class="dark-grid-bg relative pt-14 pb-20 sm:pt-24 sm:pb-28 border-b border-white/10 overflow-hidden">
+        <!-- Sfeervolle Indigo & Emerald Glows -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[740px] h-[350px] bg-[#6366F1]/15 blur-[130px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-0 right-8 w-[400px] h-[250px] bg-[#10B981]/15 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div class="max-w-3xl mx-auto text-center">
+            <!-- Status badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs sm:text-sm font-semibold text-indigo-300 mb-7">
+              <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+              <span>100% Jouw Eigendom • Klaar binnen 2 tot 7 werkdagen</span>
+            </div>
+
+            <!-- Hoofdtitel -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+              Koop een professionele website — <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#10B981]">100% jouw eigendom.</span>
+            </h1>
+
+            <!-- Subtitel -->
+            <p class="mt-6 text-base sm:text-xl text-slate-300 leading-relaxed">
+              Eenmalige investering <strong>vanaf € 349</strong>, zonder verplichte maandelijkse abonnementskosten. Wij maken eerst <strong>vrijblijvend een ontwerp</strong> van jouw voorpagina voordat je iets betaalt.
+            </p>
+
+            <!-- Primaire & Secundaire CTA -->
+            <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button type="button" data-route="starten" data-select-pkg="Eerst vrijblijvend voorpagina-ontwerp bekijken" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#6366F1] hover:bg-indigo-500 text-white font-bold px-7 py-4 rounded-2xl shadow-lg shadow-indigo-600/25 transition cursor-pointer text-base">
+                <span>Vraag Gratis Voorontwerp Aan</span>
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </button>
+              <button type="button" data-route="demos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 glass-card hover:bg-slate-800/80 text-white font-bold px-7 py-4 rounded-2xl transition cursor-pointer text-base">
+                <i data-lucide="monitor-smartphone" class="w-5 h-5 text-[#10B981]"></i>
+                <span>Bekijk Live Demo’s</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3 Glassmorphism Kernbeloftes -->
+          <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card rounded-2xl p-7">
+              <div class="w-12 h-12 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] flex items-center justify-center mb-5">
+                <i data-lucide="badge-check" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white">100% Jouw Eigendom (Vanaf € 349)</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+                Je betaalt één keer voor het ontwerp en de bouw. Daarna is de complete website en code volledig van jou — zonder verplichte maandelijkse huur.
+              </p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-7">
+              <div class="w-12 h-12 rounded-xl bg-[#6366F1]/15 border border-[#6366F1]/30 text-indigo-400 flex items-center justify-center mb-5">
+                <i data-lucide="eye" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white">Eerst zien, dan pas betalen</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+                Wij bouwen eerst vrijblijvend een ontwerp van jouw voorpagina. Pas als jij 100% enthousiast bent, ronden we de website af.
+              </p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-7">
+              <div class="w-12 h-12 rounded-xl bg-[#6366F1]/15 border border-[#6366F1]/30 text-indigo-400 flex items-center justify-center mb-5">
+                <i data-lucide="clock" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white">Live in 2 tot 7 werkdagen</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+                Geen trajecten van maanden. Dankzij onze gestroomlijnde werkwijze staat jouw op maat gemaakte website binnen 2 tot 7 werkdagen online.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risicovrije Garantie Banner -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
+        <div class="rounded-3xl bg-gradient-to-r from-[#0B1120] via-indigo-950/40 to-[#0B1120] border border-indigo-500/30 p-8 sm:p-11 relative overflow-hidden">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative">
+            <div class="max-w-2xl">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] text-xs font-bold uppercase tracking-wider mb-3">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>100% Risicovrij Starten</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+                Eerst vrijblijvend een ontwerp zien voordat je betaalt
+              </h2>
+              <p class="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                Twijfel je of een nieuwe website bij jouw bedrijf past? Stuur je bedrijfsnaam en wensen door. Wij maken vrijblijvend een eerste voorpagina-ontwerp op maat. Bevalt het niet? Dan betaal je <strong>helemaal niets</strong>.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+              <button type="button" data-route="starten" data-select-pkg="Eerst vrijblijvend voorpagina-ontwerp bekijken" class="bg-[#6366F1] hover:bg-indigo-500 text-white font-bold px-6 py-4 rounded-2xl text-sm shadow-lg shadow-indigo-600/20 transition cursor-pointer">
+                Gratis Voorontwerp Aanvragen
+              </button>
+              <a href="#" data-wa-link="Hallo! Ik wil graag eerst vrijblijvend een ontwerp van mijn voorpagina zien." target="_blank" rel="noopener noreferrer" class="bg-[#10B981] hover:bg-emerald-400 text-slate-950 font-bold px-6 py-4 rounded-2xl text-sm transition text-center">
+                App Direct via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Showcase Preview Kaarten op Home -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Bouwkwaliteit in beeld</span>
+            <h2 class="mt-1 text-3xl sm:text-4xl font-extrabold text-white">Interactieve voorbeelden van ons werk</h2>
+            <p class="mt-2 text-slate-300 max-w-2xl text-sm sm:text-base">
+              Klik door onze demo-websites. Jij koopt altijd een <strong>100% uniek maatwerk ontwerp</strong> in jouw eigen huisstijl en kleuren.
+            </p>
+          </div>
+          <button type="button" data-route="demos" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-bold text-sm cursor-pointer shrink-0">
+            <span>Alle interactieve demo’s openen</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <!-- Kaart A: Van Dijk Installatietechniek -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-indigo-500/40 transition">
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
+                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/900x500/0f172a/ffffff?text=Van+Dijk+Installatietechniek'" alt="Van Dijk Installatietechniek" class="w-full h-full object-cover opacity-75 group-hover:scale-105 transition duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/40 to-transparent p-5 flex flex-col justify-between">
+                  <span class="self-start text-[11px] font-bold uppercase tracking-wider bg-amber-500 text-slate-950 px-2.5 py-1 rounded-md">Bouw & Installatie</span>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Van Dijk Installatietechniek</h3>
+                    <p class="text-xs text-slate-300">24/7 Storingsdienst, groepenkasten & laadpalen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Industrieel marineblauw & koper-amber ontwerp met keurmerken, richtprijzen en werkend storingsformulier.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <button type="button" data-open-demo="vandijk" class="w-full py-3 px-4 rounded-xl bg-slate-800/90 hover:bg-[#6366F1] text-white font-bold text-sm transition cursor-pointer">
+                Bekijk Live Demo →
+              </button>
+            </div>
+          </div>
+
+          <!-- Kaart B: Maison Élégance -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-indigo-500/40 transition">
+            <div>
+              <div class="relative h-48 overflow-hidden bg-stone-900">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/900x500/1c1917/ffffff?text=Maison+Elegance'" alt="Maison Élégance Hair & Botanical Spa" class="w-full h-full object-cover opacity-75 group-hover:scale-105 transition duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/40 to-transparent p-5 flex flex-col justify-between">
+                  <span class="self-start text-[11px] font-bold uppercase tracking-wider bg-amber-600 text-white px-2.5 py-1 rounded-md">Salon & Botanical Spa</span>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Maison Élégance</h3>
+                    <p class="text-xs text-slate-300">Editorial behandelmenu & tijdslot-kiezer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Luxe ivoor & champagne-goud boutique-ontwerp met Cormorant Garamond typografie en afspraakplanner.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <button type="button" data-open-demo="maison" class="w-full py-3 px-4 rounded-xl bg-slate-800/90 hover:bg-[#6366F1] text-white font-bold text-sm transition cursor-pointer">
+                Bekijk Live Demo →
+              </button>
+            </div>
+          </div>
+
+          <!-- Kaart C: Bistro De Markt -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-indigo-500/40 transition">
+            <div>
+              <div class="relative h-48 overflow-hidden bg-emerald-950">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/900x500/14261c/ffffff?text=Bistro+De+Markt'" alt="Bistro De Markt" class="w-full h-full object-cover opacity-75 group-hover:scale-105 transition duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/40 to-transparent p-5 flex flex-col justify-between">
+                  <span class="self-start text-[11px] font-bold uppercase tracking-wider bg-[#10B981] text-slate-950 px-2.5 py-1 rounded-md">Horeca & Bistro</span>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Bistro De Markt</h3>
+                    <p class="text-xs text-slate-300">Filterbare menukaart & tafelreservering</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Sfeervol donkergroen & crème restaurantontwerp met Playfair Display serif en live menukaart-filters.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <button type="button" data-open-demo="bistro" class="w-full py-3 px-4 rounded-xl bg-slate-800/90 hover:bg-[#6366F1] text-white font-bold text-sm transition cursor-pointer">
+                Bekijk Live Demo →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- *******************************************************
+         PAGINA 2: LIVE DEMO'S
+    ******************************************************** -->
+    <section id="page-demos" class="app-page py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Kop & Maatwerk-banner -->
+        <div class="max-w-3xl mx-auto text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Interactieve Demo-Omgeving</span>
+          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Ervaar onze bouwkwaliteit</h1>
+          <div class="mt-4 p-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-200 text-xs sm:text-sm leading-relaxed">
+            <strong>Dit zijn voorbeelden van onze bouwkwaliteit.</strong> Jij koopt een <strong>100% uniek maatwerk ontwerp</strong> met jouw eigen logo, kleuren, foto’s en teksten — volledig jouw eigendom.
+          </div>
+        </div>
+
+        <!-- Branche Selector (3 Tabs) -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-6">
+          <button type="button" data-demo-branch="vandijk" class="demo-branch-btn px-4 py-2.5 rounded-xl text-sm font-bold transition cursor-pointer bg-[#6366F1] text-white shadow-md shadow-indigo-600/20">
+            Van Dijk Installatietechniek
+          </button>
+          <button type="button" data-demo-branch="maison" class="demo-branch-btn px-4 py-2.5 rounded-xl text-sm font-bold transition cursor-pointer glass-card text-slate-300 hover:text-white">
+            Maison Élégance
+          </button>
+          <button type="button" data-demo-branch="bistro" class="demo-branch-btn px-4 py-2.5 rounded-xl text-sm font-bold transition cursor-pointer glass-card text-slate-300 hover:text-white">
+            Bistro De Markt
+          </button>
+        </div>
+
+        <!-- macOS Browser-Mockup -->
+        <div class="bg-[#0B1120] rounded-2xl shadow-2xl border border-white/10 overflow-hidden">
+          <!-- Browser Topbar -->
+          <div class="bg-[#03050A] px-4 py-3 flex flex-wrap items-center justify-between gap-3 border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="flex items-center gap-1.5" aria-hidden="true">
+                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="bg-[#0B1120] text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-white/10 font-mono flex items-center gap-2">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-[#10B981]"></i>
+                <span id="demo-url-display">https://www.vandijk-installatietechniek.nl</span>
+              </div>
+            </div>
+
+            <!-- Desktop / Mobiel (390px) / Volledig Scherm Controls -->
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="flex items-center gap-1 bg-[#0B1120] p-1 rounded-xl border border-white/10">
+                <button type="button" id="btn-view-desktop" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#6366F1] text-white cursor-pointer transition">
+                  <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
+                  <span>Desktop</span>
+                </button>
+                <button type="button" id="btn-view-mobile" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer transition">
+                  <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+                  <span>Mobiel (390px)</span>
+                </button>
+              </div>
+
+              <button type="button" id="btn-open-fullscreen-demo" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-white/10 transition cursor-pointer">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-[#10B981]"></i>
+                <span>Volledig Scherm</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Viewport -->
+          <div class="bg-[#060913] p-0 sm:p-6 flex justify-center">
+            <div id="demo-frame-container" class="w-full transition-all duration-300 rounded-none sm:rounded-xl overflow-hidden shadow-2xl border border-white/10">
+              <div id="demo-render-area" class="min-h-[600px] max-h-[750px] overflow-y-auto demo-scroll"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA onder Demo -->
+        <div class="mt-10 glass-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <h3 class="text-lg font-extrabold text-white">Klaar voor jouw eigen maatwerk website?</h3>
+            <p class="text-sm text-slate-300">Eenmalige koop vanaf € 349 • 100% jouw eigendom • Binnen 2 tot 7 werkdagen live.</p>
+          </div>
+          <button type="button" data-route="starten" data-select-pkg="Eerst vrijblijvend voorpagina-ontwerp bekijken" class="w-full sm:w-auto bg-[#6366F1] hover:bg-indigo-500 text-white font-bold px-6 py-3.5 rounded-xl text-sm transition cursor-pointer shrink-0">
+            Vraag Gratis Voorontwerp Aan →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- *******************************************************
+         PAGINA 3: PAKKETTEN & PRIJZEN (EENMALIGE KOOP)
+    ******************************************************** -->
+    <section id="page-prijzen" class="app-page py-12 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Eenmalige Investering • 100% Eigendom</span>
+          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Transparante pakketten zonder verplichte maandkosten</h1>
+          <p class="mt-3 text-slate-300 text-base">
+            Je koopt jouw website éénmalig en wordt direct 100% eigenaar. Eerst vrijblijvend een ontwerp zien voordat je betaalt.
+          </p>
+        </div>
+
+        <!-- 2 Eenmalige Kooppakketten naast elkaar -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+          <!-- Pakket 1: Starter Website -->
+          <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-3">
+                <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-bold uppercase tracking-wider">Starter</span>
+                <span class="text-xs font-semibold text-[#10B981]">100% Eigendom</span>
+              </div>
+
+              <h2 class="text-2xl font-extrabold text-white mt-4">Starter Website</h2>
+              <p class="text-sm text-slate-400 mt-1">Ideaal voor zzp’ers, vakmensen en startende ondernemers.</p>
+
+              <div class="mt-6 flex items-baseline gap-2">
+                <span class="text-5xl font-extrabold text-white">€ 349</span>
+                <span class="text-slate-400 font-medium">eenmalig (excl. btw)</span>
+              </div>
+
+              <ul class="mt-7 space-y-3.5 text-sm text-slate-200">
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span><strong>1 tot 3 pagina’s</strong> op maat ontworpen</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span><strong>100% maatwerk & jouw eigendom</strong> (geen verplichte huur)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span>Volledig mobielvriendelijk (smartphone, tablet & desktop)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span>Directe <strong>WhatsApp- & contactkoppeling</strong></span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span>Oplevering binnen <strong>2 tot 7 werkdagen</strong></span>
+                </li>
+              </ul>
+            </div>
+
+            <button type="button" data-route="starten" data-select-pkg="Starter Website — € 349 eenmalig" class="mt-8 w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 rounded-2xl border border-white/10 transition cursor-pointer text-sm">
+              Kies Starter Website (€ 349) →
+            </button>
+          </div>
+
+          <!-- Pakket 2: Pro Bedrijfswebsite [Meest Gekozen] -->
+          <div class="glass-card rounded-3xl border-2 border-[#6366F1] p-8 flex flex-col justify-between relative shadow-2xl shadow-indigo-950/50">
+            <span class="absolute -top-3.5 left-8 bg-gradient-to-r from-[#6366F1] to-[#10B981] text-white text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 rounded-full">
+              Meest Gekozen
+            </span>
+
+            <div>
+              <div class="flex items-center justify-between gap-3 mt-1">
+                <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-wider">Compleet</span>
+                <span class="text-xs font-semibold text-[#10B981]">100% Eigendom</span>
+              </div>
+
+              <h2 class="text-2xl font-extrabold text-white mt-4">Pro Bedrijfswebsite</h2>
+              <p class="text-sm text-slate-400 mt-1">Voor bedrijven die maximaal willen overtuigen en lokaal gevonden willen worden.</p>
+
+              <div class="mt-6 flex items-baseline gap-2">
+                <span class="text-5xl font-extrabold text-white">€ 499</span>
+                <span class="text-slate-400 font-medium">eenmalig (excl. btw)</span>
+              </div>
+
+              <ul class="mt-7 space-y-3.5 text-sm text-slate-200">
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span><strong>Tot 6 pagina’s</strong> (Home, Diensten, Projecten, Over ons, Contact)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span><strong>100% maatwerk & jouw eigendom</strong></span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span><strong>Lokale Google SEO-optimalisatie</strong> voor jouw regio</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span>Interactieve <strong>offerte- of reserveringsmodule</strong></span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span>Hulp bij het koppelen van je <strong>.nl-domein & hosting</strong></span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-[#10B981] shrink-0 mt-0.5"></i>
+                  <span><strong>30 dagen gratis opstart-support</strong> na livegang</span>
+                </li>
+              </ul>
+            </div>
+
+            <button type="button" data-route="starten" data-select-pkg="Pro Bedrijfswebsite — € 499 eenmalig" class="mt-8 w-full bg-[#6366F1] hover:bg-indigo-500 text-white font-bold py-4 rounded-2xl shadow-lg shadow-indigo-600/25 transition cursor-pointer text-sm">
+              Kies Pro Bedrijfswebsite (€ 499) →
+            </button>
+          </div>
+        </div>
+
+        <!-- Optionele Onderhoud & Updates Strip -->
+        <div class="max-w-5xl mx-auto mt-8">
+          <div class="glass-card rounded-2xl p-5 sm:p-6 border border-emerald-500/25 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="wrench" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="font-bold text-white text-sm sm:text-base">Optioneel: Onderhoud & Updates Strip — € 25/mnd</span>
+                  <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#10B981]/15 text-[#10B981]">Volledig vrijblijvend</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                  Maandelijks opzegbaar — wij zetten binnen 24 uur nieuwe foto’s, prijzen of acties online via WhatsApp. Je bent dit niet verplicht.
+                </p>
+              </div>
+            </div>
+            <button type="button" data-route="starten" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-white/10 transition cursor-pointer shrink-0">
+              Vraag naar mogelijkheden
+            </button>
+          </div>
+        </div>
+
+        <!-- Eerlijke Vergelijkingstabel -->
+        <div class="max-w-5xl mx-auto mt-14 glass-card rounded-3xl overflow-hidden">
+          <div class="px-6 py-5 border-b border-white/10">
+            <h3 class="text-lg sm:text-xl font-extrabold text-white">Eerlijke vergelijking: Traditioneel Webbureau vs. NexaWeb</h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="bg-[#03050A] border-b border-white/10 text-xs uppercase text-slate-400">
+                  <th class="py-4 px-6 font-bold">Onderdeel</th>
+                  <th class="py-4 px-6 font-bold">Traditioneel Webbureau</th>
+                  <th class="py-4 px-6 font-bold text-[#10B981] bg-indigo-500/10">NexaWeb Eenmalige Koop</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10">
+                <tr>
+                  <td class="py-4 px-6 font-medium text-slate-200">Eenmalige aanschafprijs</td>
+                  <td class="py-4 px-6 text-rose-400 font-semibold">€ 1.500 – € 3.000</td>
+                  <td class="py-4 px-6 text-[#10B981] font-extrabold bg-indigo-500/5">€ 349 – € 499 eenmalig</td>
+                </tr>
+                <tr>
+                  <td class="py-4 px-6 font-medium text-slate-200">Eigendom van de website</td>
+                  <td class="py-4 px-6 text-slate-300">Vaak pas na lang contract</td>
+                  <td class="py-4 px-6 text-white font-bold bg-indigo-500/5">Direct 100% jouw eigendom</td>
+                </tr>
+                <tr>
+                  <td class="py-4 px-6 font-medium text-slate-200">Verplichte maandkosten</td>
+                  <td class="py-4 px-6 text-slate-300">Vaak € 50 – € 95 p/m verplicht</td>
+                  <td class="py-4 px-6 text-[#10B981] font-bold bg-indigo-500/5">€ 0 verplicht (alleen eigen hosting ~€ 5-8/mnd)</td>
+                </tr>
+                <tr>
+                  <td class="py-4 px-6 font-medium text-slate-200">Oplevertijd</td>
+                  <td class="py-4 px-6 text-slate-300">4 tot 10 weken</td>
+                  <td class="py-4 px-6 text-white font-semibold bg-indigo-500/5">2 tot 7 werkdagen</td>
+                </tr>
+                <tr>
+                  <td class="py-4 px-6 font-medium text-slate-200">Zekerheid vooraf</td>
+                  <td class="py-4 px-6 text-slate-300">50% aanbetaling vooraf</td>
+                  <td class="py-4 px-6 text-[#10B981] font-bold bg-indigo-500/5">Eerst vrijblijvend voorpagina zien</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Klikbare FAQ Accordeon -->
+        <div class="mt-16 max-w-3xl mx-auto">
+          <div class="text-center mb-8">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Veelgestelde vragen</span>
+            <h2 class="mt-1 text-2xl sm:text-3xl font-extrabold text-white">Alles over koop, eigendom & hosting</h2>
+          </div>
+
+          <div class="space-y-3">
+            <div class="faq-item glass-card rounded-2xl overflow-hidden">
+              <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-bold text-white hover:bg-slate-800/40 transition cursor-pointer">
+                <span>Ben ik na betaling echt 100% eigenaar van de website?</span>
+                <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 transition-transform shrink-0"></i>
+              </button>
+              <div class="faq-body px-6 text-sm text-slate-300 leading-relaxed">
+                <div class="pb-5">Ja, 100%. Na de eenmalige betaling van € 349 of € 499 is de volledige website, inclusief alle bronbestanden, teksten en het ontwerp, helemaal jouw eigendom. Je zit nergens aan vast.</div>
+              </div>
+            </div>
+
+            <div class="faq-item glass-card rounded-2xl overflow-hidden">
+              <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-bold text-white hover:bg-slate-800/40 transition cursor-pointer">
+                <span>Welke kosten heb ik nog voor mijn domeinnaam en hosting?</span>
+                <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 transition-transform shrink-0"></i>
+              </button>
+              <div class="faq-body px-6 text-sm text-slate-300 leading-relaxed">
+                <div class="pb-5">Aan ons betaal je geen verplichte maandkosten. Voor een eigen .nl-domeinnaam en snelle webhosting bij een Nederlandse hostingprovider betaal je zelf rechtstreeks ongeveer € 5 tot € 8 per maand. Wij helpen je gratis om dit binnen 10 minuten op jouw naam in te stellen.</div>
+              </div>
+            </div>
+
+            <div class="faq-item glass-card rounded-2xl overflow-hidden">
+              <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-bold text-white hover:bg-slate-800/40 transition cursor-pointer">
+                <span>Hoe werkt 'eerst vrijblijvend een ontwerp zien voordat je betaalt'?</span>
+                <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 transition-transform shrink-0"></i>
+              </button>
+              <div class="faq-body px-6 text-sm text-slate-300 leading-relaxed">
+                <div class="pb-5">Je stuurt je bedrijfsnaam, logo (als je dat hebt) en wensen door. Wij ontwerpen vrijblijvend jouw nieuwe voorpagina zodat je het resultaat live kunt bekijken. Pas als je tevreden bent, bouwen we de overige pagina’s af en betaal je het eenmalige bedrag.</div>
+              </div>
+            </div>
+
+            <div class="faq-item glass-card rounded-2xl overflow-hidden">
+              <button type="button" class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-bold text-white hover:bg-slate-800/40 transition cursor-pointer">
+                <span>Hoe snel staat mijn nieuwe website online?</span>
+                <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 transition-transform shrink-0"></i>
+              </button>
+              <div class="faq-body px-6 text-sm text-slate-300 leading-relaxed">
+                <div class="pb-5">Binnen 2 tot 7 werkdagen leveren wij jouw complete website werkend op. Eventuele aanpassingen stemmen we tussentijds razendsnel af via WhatsApp.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- *******************************************************
+         PAGINA 4: OVER ONS (Zonder gezicht/persoonlijke foto)
+    ******************************************************** -->
+    <section id="page-over-ons" class="app-page py-12 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-6">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-4">
+              Over <span data-bind="studioName">NexaWeb Studio</span>
+            </span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+              100% maatwerk websites voor een eerlijke eenmalige prijs
+            </h1>
+            <p class="mt-5 text-slate-300 text-base sm:text-lg leading-relaxed">
+              <span data-bind="studioName" class="font-semibold text-white">NexaWeb Studio</span> bouwt moderne, snelle websites voor ondernemers in <span data-bind="region" class="font-semibold text-white">Limburg & heel Nederland</span>.
+            </p>
+            <p class="mt-4 text-slate-300 text-base leading-relaxed">
+              Traditionele webbureaus rekenen al snel € 1.500 tot € 3.000 vanwege dure kantoorpanden, accountmanagers en trage werkprocessen — én binden je daarna vast aan dure wurgcontracten. Door slimme AI-workflows te combineren met strakke webontwikkeling houden wij onze kosten laag. Daardoor koop je bij ons een <strong>100% uniek maatwerk ontwerp voor € 349 tot € 499 eenmalig</strong>, volledig jouw eigendom.
+            </p>
+
+            <div class="mt-7 flex flex-wrap gap-3">
+              <button type="button" data-route="starten" data-select-pkg="Eerst vrijblijvend voorpagina-ontwerp bekijken" class="bg-[#6366F1] hover:bg-indigo-500 text-white font-bold px-6 py-3.5 rounded-xl text-sm transition cursor-pointer">
+                Vraag Gratis Voorontwerp Aan
+              </button>
+              <a href="#" data-wa-link="Hallo! Ik wil graag kennismaken en de mogelijkheden voor een eigen website bespreken." target="_blank" rel="noopener noreferrer" class="glass-card hover:bg-slate-800 text-white font-bold px-6 py-3.5 rounded-xl text-sm transition">
+                App Direct via WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Strakke studio-/werkplek-visual (architectuur/laptop op donker bureau zonder gezichten) -->
+          <div class="lg:col-span-6">
+            <div class="glass-card rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+                onerror="this.src='https://placehold.co/1200x800/0b1120/6366f1?text=NexaWeb+Studio'"
+                alt="Moderne studio werkplek en technologie"
+                class="w-full h-[330px] sm:h-[400px] object-cover opacity-85"
+              />
+              <div class="p-6 bg-[#0B1120] flex flex-wrap items-center justify-between gap-4 border-t border-white/10">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-[#10B981]">Geen duur kantoorpand • Geen wurgcontracten</span>
+                  <p class="text-sm text-slate-300 mt-0.5">Slimme AI-workflows, direct contact via WhatsApp & 100% eigendom.</p>
+                </div>
+                <span class="px-3.5 py-1.5 rounded-xl bg-indigo-500/15 border border-indigo-500/30 text-xs font-bold text-indigo-300">
+                  2 – 7 werkdagen live
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Kernwaarden -->
+        <div class="mt-20">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Onze Beloftes</span>
+            <h2 class="mt-1 text-3xl font-extrabold text-white">4 kernwaarden die het verschil maken</h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="w-11 h-11 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] flex items-center justify-center mb-4">
+                <i data-lucide="eye" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">Eerst zien, dan pas betalen</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">Je bekijkt eerst vrijblijvend het ontwerp van jouw voorpagina voordat je een euro betaalt.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="w-11 h-11 rounded-xl bg-[#6366F1]/15 border border-[#6366F1]/30 text-indigo-400 flex items-center justify-center mb-4">
+                <i data-lucide="badge-check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">100% Jouw Eigendom</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">Na oplevering is de complete website en code volledig van jou, zonder verplichte maandabonnementen.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="w-11 h-11 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] flex items-center justify-center mb-4">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">Klaar in 2 tot 7 werkdagen</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">Door directe communicatie via WhatsApp staat jouw complete website razendsnel online.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <div class="w-11 h-11 rounded-xl bg-[#6366F1]/15 border border-[#6366F1]/30 text-indigo-400 flex items-center justify-center mb-4">
+                <i data-lucide="shield-off" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-bold text-white text-lg">Geen verplichte maandkosten</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">Je betaalt één keer een helder bedrag (€ 349 of € 499) en zit nergens aan vast.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Stappen Tijdlijn -->
+        <div class="mt-20 glass-card rounded-3xl p-8 sm:p-12">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Zo werkt het</span>
+            <h2 class="mt-1 text-3xl font-extrabold text-white">In 4 stappen naar jouw eigen website</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-[#6366F1] text-white font-extrabold flex items-center justify-center text-sm mb-4">1</div>
+              <h3 class="font-bold text-white text-base">Gratis voorpagina-ontwerp</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">Je deelt je bedrijfsnaam en wensen. Wij maken vrijblijvend een ontwerp van je voorpagina.</p>
+            </div>
+
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-[#6366F1] text-white font-extrabold flex items-center justify-center text-sm mb-4">2</div>
+              <h3 class="font-bold text-white text-base">Finetunen via WhatsApp</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">Tevreden met de stijl? Dan bouwen we de rest van de pagina’s en verwerken we jouw foto’s en teksten.</p>
+            </div>
+
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-[#6366F1] text-white font-extrabold flex items-center justify-center text-sm mb-4">3</div>
+              <h3 class="font-bold text-white text-base">Live in 2 tot 7 werkdagen</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">Wij helpen je met het koppelen van je .nl-domeinnaam en zetten de website live.</p>
+            </div>
+
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-[#10B981] text-slate-950 font-extrabold flex items-center justify-center text-sm mb-4">4</div>
+              <h3 class="font-bold text-white text-base">100% Jouw Eigendom</h3>
+              <p class="mt-2 text-sm text-slate-300 leading-relaxed">Na de eenmalige betaling is de site helemaal van jou, zonder verplichte maandelijkse kosten.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- *******************************************************
+         PAGINA 5: PROJECT STARTEN
+    ******************************************************** -->
+    <section id="page-starten" class="app-page py-12 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] text-xs font-bold uppercase tracking-wider mb-3">
+            Eerst ontwerp zien • 100% Eigendom
+          </span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Start jouw websiteproject</h1>
+          <p class="mt-3 text-slate-300 text-sm sm:text-base">
+            Kies je gewenste pakket of vraag eerst vrijblijvend een voorpagina-ontwerp aan. Je aanvraag opent direct vooringevuld in WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Formulier -->
+          <form id="project-start-form" class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 space-y-5">
+            <div>
+              <label for="inp-package" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Pakketkeuze *</label>
+              <select id="inp-package" class="w-full rounded-xl bg-[#060913] border border-white/15 px-4 py-3 text-sm text-white focus:outline-none focus:border-[#6366F1]">
+                <option value="Eerst vrijblijvend voorpagina-ontwerp bekijken">Eerst vrijblijvend voorpagina-ontwerp bekijken (€ 0)</option>
+                <option value="Starter Website — € 349 eenmalig">Starter Website — € 349 eenmalig (1-3 pagina’s)</option>
+                <option value="Pro Bedrijfswebsite — € 499 eenmalig">Pro Bedrijfswebsite — € 499 eenmalig (Tot 6 pagina’s + SEO)</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="inp-company" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Bedrijfsnaam *</label>
+                <input type="text" id="inp-company" required placeholder="Bijv. Bouwbedrijf Van Loon" class="w-full rounded-xl bg-[#060913] border border-white/15 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#6366F1]" />
+              </div>
+              <div>
+                <label for="inp-contact" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Contactpersoon *</label>
+                <input type="text" id="inp-contact" required placeholder="Voor- en achternaam" class="w-full rounded-xl bg-[#060913] border border-white/15 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#6366F1]" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="inp-branch" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Branche *</label>
+                <select id="inp-branch" class="w-full rounded-xl bg-[#060913] border border-white/15 px-4 py-3 text-sm text-white focus:outline-none focus:border-[#6366F1]">
+                  <option value="Bouw, Installatie & Vakmensen">Bouw, Installatie & Vakmensen</option>
+                  <option value="Kapsalon, Beauty & Spa">Kapsalon, Beauty & Spa</option>
+                  <option value="Horeca, Bistro & Catering">Horeca, Bistro & Catering</option>
+                  <option value="Zakelijke Dienstverlening & Advies">Zakelijke Dienstverlening & Advies</option>
+                  <option value="Zorg, Coaching & Sport">Zorg, Coaching & Sport</option>
+                  <option value="Overige branche">Overige branche</option>
+                </select>
+              </div>
+              <div>
+                <label for="inp-domain" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Gewenste .nl-domeinnaam</label>
+                <input type="text" id="inp-domain" placeholder="bijv. jouwbedrijf.nl" class="w-full rounded-xl bg-[#060913] border border-white/15 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#6366F1]" />
+              </div>
+            </div>
+
+            <div>
+              <label for="inp-wishes" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Wensen & opmerkingen</label>
+              <textarea id="inp-wishes" rows="3" placeholder="Vertel kort over je bedrijf, je diensten, gewenste kleuren of voorbeelden die je mooi vindt..." class="w-full rounded-xl bg-[#060913] border border-white/15 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#6366F1]"></textarea>
+            </div>
+
+            <div class="pt-1 flex flex-col sm:flex-row gap-3">
+              <button type="submit" class="flex-1 inline-flex items-center justify-center gap-2 bg-[#10B981] hover:bg-emerald-400 text-slate-950 font-extrabold py-4 px-6 rounded-2xl shadow-lg shadow-emerald-500/20 transition cursor-pointer text-sm">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>Verstuur via WhatsApp</span>
+              </button>
+
+              <button type="button" id="btn-copy-request" class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-5 rounded-2xl border border-white/10 transition cursor-pointer text-sm">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+                <span>Kopieer Tekst</span>
+              </button>
+            </div>
+
+            <div id="form-status-box" class="hidden p-4 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] text-sm font-medium"></div>
+          </form>
+
+          <!-- Rechterkolom: Direct Contact & Overzicht -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="glass-card rounded-2xl p-6">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] flex items-center justify-center shrink-0">
+                  <i data-lucide="message-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-white text-base">Direct WhatsApp Contact</h3>
+                  <p class="text-xs text-slate-400">+<span data-bind="whatsappDisplay">31612345678</span></p>
+                </div>
+              </div>
+              <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                Liever direct even overleggen? Stuur een appje met je bedrijfsnaam en wij kijken meteen mee.
+              </p>
+              <a href="#" data-wa-link="Hallo! Ik wil graag een website laten bouwen (eenmalige koop, 100% eigendom)." target="_blank" rel="noopener noreferrer" class="mt-4 w-full inline-flex items-center justify-center gap-2 bg-[#10B981] hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded-xl text-xs transition">
+                Open WhatsApp Chat →
+              </a>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+              <h4 class="font-bold text-xs uppercase tracking-wider text-indigo-400">Samenvatting Voorwaarden</h4>
+              <ul class="mt-4 space-y-3 text-sm text-slate-300">
+                <li class="flex justify-between border-b border-white/10 pb-2.5">
+                  <span>Voorpagina-ontwerp vooraf</span>
+                  <span class="font-bold text-[#10B981]">Gratis & vrijblijvend</span>
+                </li>
+                <li class="flex justify-between border-b border-white/10 pb-2.5">
+                  <span>Starter / Pro eenmalig</span>
+                  <span class="font-bold text-white">€ 349 / € 499</span>
+                </li>
+                <li class="flex justify-between border-b border-white/10 pb-2.5">
+                  <span>Eigendom</span>
+                  <span class="font-bold text-[#10B981]">100% van jou</span>
+                </li>
+                <li class="flex justify-between border-b border-white/10 pb-2.5">
+                  <span>Oplevertijd</span>
+                  <span class="font-bold text-white">2 – 7 werkdagen</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Regio</span>
+                  <span class="font-bold text-white" data-bind="region">Limburg & heel Nederland</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       4. FOOTER
+  ========================================================== -->
+  <footer class="bg-[#03050A] text-slate-400 border-t border-white/10 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-2.5 text-white font-display font-extrabold text-lg">
+            <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#6366F1] to-[#10B981] flex items-center justify-center text-white">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+            </span>
+            <span data-bind="studioName">NexaWeb Studio</span>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            100% op maat gemaakte websites vanaf € 349 eenmalig. Volledig jouw eigendom zonder verplichte maandelijkse abonnementskosten.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Navigatie</h4>
+          <ul class="space-y-2 text-sm">
+            <li><button type="button" data-route="home" class="hover:text-white transition cursor-pointer">Home</button></li>
+            <li><button type="button" data-route="demos" class="hover:text-white transition cursor-pointer">Live Demo’s</button></li>
+            <li><button type="button" data-route="prijzen" class="hover:text-white transition cursor-pointer">Pakketten & Prijzen</button></li>
+            <li><button type="button" data-route="over-ons" class="hover:text-white transition cursor-pointer">Over Ons</button></li>
+            <li><button type="button" data-route="starten" class="hover:text-white transition cursor-pointer">Project Starten</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Contact</h4>
+          <p class="text-sm">Regio: <span class="text-slate-200" data-bind="region">Limburg & heel Nederland</span></p>
+          <p class="text-sm mt-1">WhatsApp: <span class="text-slate-200">+<span data-bind="whatsappDisplay">31612345678</span></span></p>
+          <a href="#" data-wa-link="Hallo! Ik heb interesse in een eigen website vanaf € 349 eenmalig." target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 bg-[#10B981] hover:bg-emerald-400 text-slate-950 text-xs font-bold px-4 py-2.5 rounded-xl transition">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Start WhatsApp Chat</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-white/10 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-2">
+        <p>© <span id="year-now">2026</span> <span data-bind="studioName">NexaWeb Studio</span>. Alle rechten voorbehouden.</p>
+        <p>100% Jouw Eigendom • Eerst vrijblijvend ontwerp zien</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       5. VOLLEDIG SCHERM DEMO MODAL (ALLEEN ZICHTBAAR NA KLIK)
+  ========================================================== -->
+  <div id="fullscreen-demo-modal" class="hidden fixed inset-0 z-50 bg-[#03050A]/95 backdrop-blur-md flex flex-col">
+    <div class="bg-[#0B1120] border-b border-white/10 px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Volledig Scherm Demo</span>
+        <span id="fs-demo-url" class="text-xs font-mono text-slate-300 bg-[#060913] px-3 py-1 rounded-lg border border-white/10">https://www.vandijk-installatietechniek.nl</span>
+      </div>
+      <button id="btn-close-fullscreen-demo" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition cursor-pointer">
+        <i data-lucide="x" class="w-4 h-4"></i>
+        <span>Sluit Volledig Scherm</span>
+      </button>
+    </div>
+    <div id="fs-demo-body" class="flex-grow overflow-y-auto demo-scroll"></div>
+  </div>
+
+  <!-- =========================================================
+       6. JAVASCRIPT (100% KLIKBAAR & ZONDER FOUTEN)
+  ========================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      const yearSpan = document.getElementById('year-now');
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+      /* ---------------------------------------------------------
+         A. INSTELLINGEN & LOCALSTORAGE
+      ---------------------------------------------------------- */
+      const STORAGE_KEY = 'nexaweb_buy_studio_v1';
+      const defaultConfig = {
+        studioName: 'NexaWeb Studio',
+        region: 'Limburg & heel Nederland',
+        whatsapp: '31612345678',
+        ownerBarHidden: false
+      };
+
+      function loadConfig() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          return raw ? { ...defaultConfig, ...JSON.parse(raw) } : { ...defaultConfig };
+        } catch (e) {
+          return { ...defaultConfig };
+        }
+      }
+
+      let config = loadConfig();
+
+      function sanitizePhone(raw) {
+        let digits = String(raw || '').replace(/\D/g, '');
+        if (digits.startsWith('06')) {
+          digits = '31' + digits.slice(1);
+        } else if (digits.startsWith('00')) {
+          digits = digits.slice(2);
+        }
+        return digits || '31612345678';
+      }
+
+      function buildWhatsAppUrl(text) {
+        const phone = sanitizePhone(config.whatsapp);
+        const msg = encodeURIComponent(text || `Hallo ${config.studioName}! Ik heb interesse in een eigen website.`);
+        return `https://wa.me/${phone}?text=${msg}`;
+      }
+
+      function applyConfigToUI() {
+        const phone = sanitizePhone(config.whatsapp);
+
+        document.querySelectorAll('[data-bind="studioName"]').forEach(el => {
+          el.textContent = config.studioName;
+        });
+        document.querySelectorAll('[data-bind="region"]').forEach(el => {
+          el.textContent = config.region;
+        });
+        document.querySelectorAll('[data-bind="whatsappDisplay"]').forEach(el => {
+          el.textContent = phone;
+        });
+
+        document.querySelectorAll('[data-wa-link]').forEach(el => {
+          const msg = el.getAttribute('data-wa-link');
+          el.setAttribute('href', buildWhatsAppUrl(msg));
+        });
+
+        const inpStudio = document.getElementById('cfg-studio');
+        const inpRegion = document.getElementById('cfg-region');
+        const inpWa = document.getElementById('cfg-whatsapp');
+        if (inpStudio) inpStudio.value = config.studioName;
+        if (inpRegion) inpRegion.value = config.region;
+        if (inpWa) inpWa.value = phone;
+
+        const barContent = document.getElementById('owner-bar-content');
+        const restoreBtn = document.getElementById('btn-restore-owner-bar');
+        if (config.ownerBarHidden) {
+          barContent.classList.add('hidden');
+          restoreBtn.classList.remove('hidden');
+        } else {
+          barContent.classList.remove('hidden');
+          restoreBtn.classList.add('hidden');
+        }
+      }
+
+      function saveConfig() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
+        } catch (e) {}
+      }
+
+      const btnToggleDrawer = document.getElementById('btn-toggle-owner-drawer');
+      const ownerDrawer = document.getElementById('owner-drawer');
+      const btnSaveSettings = document.getElementById('btn-save-owner-settings');
+      const btnHideBar = document.getElementById('btn-hide-owner-bar');
+      const btnRestoreBar = document.getElementById('btn-restore-owner-bar');
+
+      if (btnToggleDrawer && ownerDrawer) {
+        btnToggleDrawer.addEventListener('click', () => {
+          ownerDrawer.classList.toggle('hidden');
+        });
+      }
+
+      if (btnSaveSettings) {
+        btnSaveSettings.addEventListener('click', () => {
+          const s = document.getElementById('cfg-studio').value.trim();
+          const r = document.getElementById('cfg-region').value.trim();
+          const w = document.getElementById('cfg-whatsapp').value.trim();
+          if (s) config.studioName = s;
+          if (r) config.region = r;
+          if (w) config.whatsapp = sanitizePhone(w);
+          saveConfig();
+          applyConfigToUI();
+          ownerDrawer.classList.add('hidden');
+        });
+      }
+
+      if (btnHideBar) {
+        btnHideBar.addEventListener('click', () => {
+          config.ownerBarHidden = true;
+          saveConfig();
+          applyConfigToUI();
+        });
+      }
+
+      if (btnRestoreBar) {
+        btnRestoreBar.addEventListener('click', () => {
+          config.ownerBarHidden = false;
+          saveConfig();
+          applyConfigToUI();
+        });
+      }
+
+      applyConfigToUI();
+
+      /* ---------------------------------------------------------
+         B. 5 KLIKBARE PAGINA'S + MOBIEL HAMBURGERMENU
+      ---------------------------------------------------------- */
+      const pages = ['home', 'demos', 'prijzen', 'over-ons', 'starten'];
+      const mobileMenuBtn = document.getElementById('btn-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      function navigateTo(route, preselectPackage) {
+        if (!pages.includes(route)) route = 'home';
+
+        pages.forEach(p => {
+          const section = document.getElementById(`page-${p}`);
+          if (section) section.classList.toggle('is-active', p === route);
+        });
+
+        document.querySelectorAll('.desktop-nav-tab').forEach(tab => {
+          const isCurrent = tab.getAttribute('data-route') === route;
+          if (isCurrent) {
+            tab.classList.add('bg-[#6366F1]', 'text-white', 'shadow-sm');
+            tab.classList.remove('text-slate-400', 'hover:text-white');
+          } else {
+            tab.classList.remove('bg-[#6366F1]', 'text-white', 'shadow-sm');
+            tab.classList.add('text-slate-400', 'hover:text-white');
+          }
+        });
+
+        document.querySelectorAll('.mobile-nav-tab').forEach(tab => {
+          const isCurrent = tab.getAttribute('data-route') === route;
+          if (isCurrent) {
+            tab.classList.add('bg-[#6366F1]', 'text-white');
+            tab.classList.remove('text-slate-300', 'hover:bg-slate-800/80');
+          } else {
+            tab.classList.remove('bg-[#6366F1]', 'text-white');
+            tab.classList.add('text-slate-300', 'hover:bg-slate-800/80');
+          }
+        });
+
+        if (preselectPackage) {
+          const pkgSelect = document.getElementById('inp-package');
+          if (pkgSelect) {
+            for (let i = 0; i < pkgSelect.options.length; i++) {
+              if (pkgSelect.options[i].value === preselectPackage) {
+                pkgSelect.selectedIndex = i;
+                break;
+              }
+            }
+          }
+        }
+
+        if (mobileMenu) mobileMenu.classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('[data-route]').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          const route = el.getAttribute('data-route');
+          const pkg = el.getAttribute('data-select-pkg');
+          navigateTo(route, pkg);
+        });
+      });
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      /* ---------------------------------------------------------
+         C. FAQ ACCORDEON
+      ---------------------------------------------------------- */
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          if (item) item.classList.toggle('is-open');
+        });
+      });
+
+      /* ---------------------------------------------------------
+         D. PROJECT STARTEN FORMULIER & KOPIEERKNOP
+      ---------------------------------------------------------- */
+      const projectForm = document.getElementById('project-start-form');
+      const btnCopyReq = document.getElementById('btn-copy-request');
+      const statusBox = document.getElementById('form-status-box');
+
+      function composeWhatsAppMessage() {
+        const pkg = document.getElementById('inp-package').value;
+        const company = document.getElementById('inp-company').value.trim() || '(Niet ingevuld)';
+        const contact = document.getElementById('inp-contact').value.trim() || '(Niet ingevuld)';
+        const branch = document.getElementById('inp-branch').value;
+        const domain = document.getElementById('inp-domain').value.trim() || 'Nog te kiezen (.nl)';
+        const wishes = document.getElementById('inp-wishes').value.trim() || 'Geen extra opmerkingen';
+
+        return [
+          `Hallo ${config.studioName}! Ik wil graag een eigen website starten (100% eigendom).`,
+          ``,
+          `• Pakketkeuze: ${pkg}`,
+          `• Bedrijfsnaam: ${company}`,
+          `• Contactpersoon: ${contact}`,
+          `• Branche: ${branch}`,
+          `• Gewenste .nl-domeinnaam: ${domain}`,
+          `• Wensen: ${wishes}`
+        ].join('\n');
+      }
+
+      if (projectForm) {
+        projectForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const msg = composeWhatsAppMessage();
+          const url = buildWhatsAppUrl(msg);
+          if (statusBox) {
+            statusBox.textContent = 'Je aanvraag is klaargezet! WhatsApp wordt nu geopend.';
+            statusBox.classList.remove('hidden');
+          }
+          window.open(url, '_blank', 'noopener,noreferrer');
+        });
+      }
+
+      if (btnCopyReq) {
+        btnCopyReq.addEventListener('click', () => {
+          const text = composeWhatsAppMessage();
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          document.body.appendChild(textarea);
+          textarea.select();
+          try {
+            document.execCommand('copy');
+            if (statusBox) {
+              statusBox.textContent = 'Aanvraagtekst gekopieerd naar je klembord!';
+              statusBox.classList.remove('hidden');
+            }
+          } catch (err) {
+            if (statusBox) {
+              statusBox.textContent = text;
+              statusBox.classList.remove('hidden');
+            }
+          }
+          document.body.removeChild(textarea);
+        });
+      }
+
+      /* ---------------------------------------------------------
+         E. 3 RIJKE INTERACTIEVE DEMO-WEBSITES (ELK 3 SUBPAGINA'S)
+      ---------------------------------------------------------- */
+      let currentDemoKey = 'vandijk';
+      let currentSubTab = 'tab1';
+      let bistroFilter = 'Alles';
+      let selectedSalonService = 'Kleuren & Signature Balayage (€ 145)';
+      let selectedSalonDate = 'Morgen';
+      let selectedSalonTime = '11:30';
+      let selectedBistroGuests = '2 personen';
+      let selectedBistroDate = 'Vrijdagavond';
+      let selectedBistroTime = '19:00';
+
+      const demoConfigs = {
+        vandijk: {
+          url: 'https://www.vandijk-installatietechniek.nl',
+          tabs: [
+            { id: 'tab1', label: 'Overzicht' },
+            { id: 'tab2', label: 'Diensten & Tarieven' },
+            { id: 'tab3', label: 'Storingsdienst & Contact' }
+          ]
+        },
+        maison: {
+          url: 'https://www.maisonelegance-spa.nl',
+          tabs: [
+            { id: 'tab1', label: 'Salon' },
+            { id: 'tab2', label: 'Behandelmenu' },
+            { id: 'tab3', label: 'Afspraak Maken' }
+          ]
+        },
+        bistro: {
+          url: 'https://www.bistrodemarkt.nl',
+          tabs: [
+            { id: 'tab1', label: 'Welkom' },
+            { id: 'tab2', label: 'Menukaart' },
+            { id: 'tab3', label: 'Tafel Reserveren' }
+          ]
+        }
+      };
+
+      /* A) VAN DIJK INSTALLATIETECHNIEK (#0F172A & #F59E0B, Plus Jakarta Sans) */
+      function getVanDijkHTML(subTab) {
+        const topBar = `
+          <div class="bg-[#080E1A] text-slate-300 text-xs px-5 py-2 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+            <span class="flex items-center gap-2 font-semibold text-amber-400">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              24/7 Storingsdienst: 085 - 018 44 20
+            </span>
+            <div class="flex flex-wrap items-center gap-2 text-[11px] font-semibold text-slate-300">
+              <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700">✓ InstallQ Erkend</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700">✓ Techniek Nederland</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700">✓ VCA* Gecertificeerd</span>
+            </div>
+          </div>
+          <div class="bg-[#0F172A] text-white px-5 sm:px-8 py-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-lg bg-[#F59E0B] text-slate-950 font-extrabold flex items-center justify-center text-sm">VD</div>
+              <div>
+                <span class="font-display font-extrabold text-base sm:text-lg block leading-none">Van Dijk</span>
+                <span class="text-[11px] text-amber-400 font-semibold tracking-wider uppercase">Installatietechniek</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5">
+              ${demoConfigs.vandijk.tabs.map(t => `
+                <button type="button" data-demo-sub="${t.id}" class="px-3.5 py-2 rounded-lg text-xs font-bold cursor-pointer transition ${subTab === t.id ? 'bg-[#F59E0B] text-slate-950' : 'text-slate-300 hover:bg-slate-800'}">
+                  ${t.label}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+
+        let body = '';
+        if (subTab === 'tab1') {
+          body = `
+            <div class="relative bg-[#0F172A] text-white overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&q=80" onerror="this.style.display='none'" alt="Professioneel installatiewerk" class="w-full h-72 object-cover opacity-30" />
+              <div class="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/85 to-transparent p-6 sm:p-10 flex flex-col justify-center">
+                <span class="self-start px-3 py-1 rounded-md bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold mb-3">
+                  Elektra • Laadpalen • Verwarming
+                </span>
+                <h2 class="font-display text-2xl sm:text-4xl font-extrabold max-w-xl leading-tight">
+                  Veilige installaties en duurzame energie voor woning & bedrijf
+                </h2>
+                <p class="mt-3 text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
+                  Van het vervangen van uw groepenkast tot slimme 11kW laadpalen en cv-onderhoud. Vakkundig gemonteerd met heldere richtprijzen vooraf.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-3">
+                  <button type="button" data-demo-sub="tab3" class="bg-[#F59E0B] hover:bg-amber-400 text-slate-950 font-extrabold px-5 py-3 rounded-xl text-xs cursor-pointer transition">
+                    24/7 Spoedstoring Melden
+                  </button>
+                  <button type="button" data-demo-sub="tab2" class="bg-white/10 hover:bg-white/20 text-white font-bold px-5 py-3 rounded-xl text-xs cursor-pointer transition">
+                    Bekijk Diensten & Tarieven
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-10 bg-slate-100 text-slate-900">
+              <div class="flex flex-wrap items-end justify-between gap-2 mb-6">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Specialisaties</span>
+                  <h3 class="font-display text-xl sm:text-2xl font-extrabold text-[#0F172A]">Onze meest gekozen diensten</h3>
+                </div>
+                <button type="button" data-demo-sub="tab2" class="text-xs font-bold text-[#0F172A] underline cursor-pointer">Alle specificaties & prijzen →</button>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                  <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/700x400/0f172a/f59e0b?text=Groepenkast'" alt="Groepenkast vervangen" class="w-full h-36 object-cover" />
+                  <div class="p-5">
+                    <span class="text-xs font-extrabold text-amber-600">Vanaf € 595,-</span>
+                    <h4 class="font-display font-bold text-[#0F172A] text-base mt-1">Groepenkast Vervangen</h4>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Inclusief 1- of 3-fase aansluiting, aardlekschakelaars en NEN1010-keuring.</p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                  <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/700x400/0f172a/f59e0b?text=Laadpaal'" alt="Laadpaal installatie" class="w-full h-36 object-cover" />
+                  <div class="p-5">
+                    <span class="text-xs font-extrabold text-amber-600">Vanaf € 1.150,-</span>
+                    <h4 class="font-display font-bold text-[#0F172A] text-base mt-1">Laadpaal Installatie</h4>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Slimme 11kW of 22kW laadpaal met Dynamic Load Balancing op uw oprit.</p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                  <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/700x400/0f172a/f59e0b?text=CV+Onderhoud'" alt="CV-onderhoud" class="w-full h-36 object-cover" />
+                  <div class="p-5">
+                    <span class="text-xs font-extrabold text-amber-600">€ 9,95 / maand</span>
+                    <h4 class="font-display font-bold text-[#0F172A] text-base mt-1">CV-Onderhoud & Service</h4>
+                    <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Jaarlijkse inspectie, veilige afstelling en voorrang bij een storing.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (subTab === 'tab2') {
+          body = `
+            <div class="p-6 sm:p-10 bg-white text-slate-900">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Gedetailleerd Prijzenoverzicht</span>
+              <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0F172A] mt-1">Diensten & Tarieven</h3>
+              <p class="text-sm text-slate-600 mt-1">Inclusief vakkundige montage, keuringsrapport en 5 jaar installatiegarantie.</p>
+
+              <div class="mt-6 space-y-4">
+                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <h4 class="font-display font-extrabold text-[#0F172A] text-base">Groepenkast vervangen (compleet)</h4>
+                    <p class="text-xs text-slate-600 mt-1">Vervangen verouderde stoppenkast door moderne 8- of 12-groeps ABB/Hager kast incl. hoofdschakelaar en aardlekautomaten.</p>
+                  </div>
+                  <div class="text-left sm:text-right shrink-0">
+                    <span class="text-lg font-extrabold text-[#0F172A] block">vanaf € 595</span>
+                    <button type="button" data-demo-sub="tab3" class="mt-1 text-xs font-bold text-amber-600 hover:underline cursor-pointer">Offerte aanvragen →</button>
+                  </div>
+                </div>
+
+                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <h4 class="font-display font-extrabold text-[#0F172A] text-base">Laadpaal installatie thuis of op zaak</h4>
+                    <p class="text-xs text-slate-600 mt-1">Inclusief graaf- en boorwerk, 15m voedingskabel vanuit de meterkast, aparte krachtgroep en Load Balancing module.</p>
+                  </div>
+                  <div class="text-left sm:text-right shrink-0">
+                    <span class="text-lg font-extrabold text-[#0F172A] block">vanaf € 1.150</span>
+                    <button type="button" data-demo-sub="tab3" class="mt-1 text-xs font-bold text-amber-600 hover:underline cursor-pointer">Offerte aanvragen →</button>
+                  </div>
+                </div>
+
+                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <h4 class="font-display font-extrabold text-[#0F172A] text-base">CV-onderhoud & Storingsservice</h4>
+                    <p class="text-xs text-slate-600 mt-1">Jaarlijks preventief onderhoud, rookgasanalyse (CO-keur) en 24/7 spoedservice zonder voorrijkosten.</p>
+                  </div>
+                  <div class="text-left sm:text-right shrink-0">
+                    <span class="text-lg font-extrabold text-[#0F172A] block">€ 9,95 / mnd</span>
+                    <button type="button" data-demo-sub="tab3" class="mt-1 text-xs font-bold text-amber-600 hover:underline cursor-pointer">Direct aanmelden →</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          body = `
+            <div class="p-6 sm:p-10 bg-white text-slate-900">
+              <div class="max-w-xl">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600">24/7 Bereikbaar</span>
+                <h3 class="font-display text-2xl font-extrabold text-[#0F172A] mt-1">Storingsdienst & Offerte-aanvraag</h3>
+                <p class="text-sm text-slate-600 mt-1">Test dit interactieve formulier hieronder:</p>
+
+                <div class="mt-5 space-y-3.5">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <input type="text" placeholder="Uw naam" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                    <input type="text" placeholder="Telefoonnummer" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                  </div>
+                  <select class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm bg-white">
+                    <option>Spoedstoring melden (direct terugbellen)</option>
+                    <option>Offerte Groepenkast vervangen (vanaf € 595)</option>
+                    <option>Offerte Laadpaal installatie (vanaf € 1.150)</option>
+                    <option>Aanmelden CV-onderhoud (€ 9,95/mnd)</option>
+                  </select>
+                  <textarea rows="2" placeholder="Omschrijf uw storing of plaatsnaam..." class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm"></textarea>
+                  <button type="button" class="demo-action-submit bg-[#0F172A] hover:bg-slate-800 text-amber-400 font-bold px-6 py-3 rounded-xl text-xs cursor-pointer transition">
+                    Verstuur Melding / Aanvraag
+                  </button>
+                  <div class="demo-action-result hidden p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-semibold">
+                    ✓ Uw melding is geregistreerd! Onze storingsmonteur neemt binnen 15 minuten contact met u op.
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        const footer = `
+          <div class="bg-[#0F172A] text-slate-400 px-6 sm:px-8 py-5 text-xs flex flex-wrap items-center justify-between gap-3 border-t border-slate-800">
+            <span>© Van Dijk Installatietechniek B.V. • Erkend InstallQ, Techniek Nederland & VCA*</span>
+            <span class="text-amber-400 font-semibold">24/7 Storingslijn: 085 - 018 44 20</span>
+          </div>
+        `;
+        return topBar + body + footer;
+      }
+
+      /* B) MAISON ÉLÉGANCE — HAIR & BOTANICAL SPA (#FAF7F2, #1C1917, #B45309, Cormorant Garamond) */
+      function getMaisonHTML(subTab) {
+        const nav = `
+          <div class="bg-[#FAF7F2] text-[#1C1917] px-5 sm:px-8 py-4 flex flex-wrap items-center justify-between gap-3 border-b border-stone-200">
+            <div>
+              <span class="font-cormorant text-2xl sm:text-3xl font-bold tracking-wide text-[#1C1917] block leading-none">MAISON ÉLÉGANCE</span>
+              <span class="text-[10px] uppercase tracking-[0.22em] text-[#B45309] font-semibold">Hair & Botanical Spa</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5">
+              ${demoConfigs.maison.tabs.map(t => `
+                <button type="button" data-demo-sub="${t.id}" class="px-3.5 py-2 rounded-full text-xs font-semibold cursor-pointer transition ${subTab === t.id ? 'bg-[#1C1917] text-[#FAF7F2]' : 'text-stone-700 hover:bg-stone-200/70'}">
+                  ${t.label}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+
+        let body = '';
+        if (subTab === 'tab1') {
+          body = `
+            <div class="bg-[#FAF7F2] text-[#1C1917] grid grid-cols-1 md:grid-cols-12">
+              <div class="md:col-span-6 p-7 sm:p-10 flex flex-col justify-center">
+                <span class="text-[11px] uppercase tracking-[0.2em] text-[#B45309] font-bold mb-3">Boutique Salon & Wellness</span>
+                <h2 class="font-cormorant text-3xl sm:text-5xl font-bold leading-[1.08] text-[#1C1917]">
+                  Natuurlijke schoonheid en rust in elke behandeling
+                </h2>
+                <p class="mt-4 text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Bij Maison Élégance werken wij uitsluitend met botanische, ammoniakvrije kleuringen. Ontspan tijdens een persoonlijk kleuradvies of onze signature Japanese Head Spa.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                  <button type="button" data-demo-sub="tab3" class="bg-[#B45309] hover:bg-amber-800 text-white font-semibold px-5 py-3 rounded-full text-xs cursor-pointer transition">
+                    Afspraak Maken
+                  </button>
+                  <button type="button" data-demo-sub="tab2" class="border border-stone-400 hover:border-[#1C1917] text-[#1C1917] font-semibold px-5 py-3 rounded-full text-xs cursor-pointer transition">
+                    Bekijk Behandelmenu
+                  </button>
+                </div>
+                <div class="mt-7 pt-5 border-t border-stone-200 text-xs text-stone-600 flex flex-wrap gap-4">
+                  <span><strong>Di – Vr:</strong> 09:00 – 20:00</span>
+                  <span><strong>Za:</strong> 09:00 – 17:00</span>
+                </div>
+              </div>
+              <div class="md:col-span-6 relative min-h-[280px]">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80" onerror="this.src='https://placehold.co/800x600/faf7f2/1c1917?text=Maison+Elegance'" alt="Salon sfeerbeeld" class="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            <div class="bg-white text-[#1C1917] p-7 sm:p-10 border-t border-stone-200 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <div>
+                <span class="text-[11px] uppercase tracking-[0.2em] text-[#B45309] font-bold">Onze Filosofie</span>
+                <h3 class="font-cormorant text-2xl sm:text-3xl font-bold mt-1">Aandacht voor haar, hoofdhuid en balans</h3>
+                <p class="mt-2 text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Elke afspraak begint met een uitgebreide analyse en een kop biologische kruidenthee. Wij nemen ruim de tijd zodat u ontspannen en stralend de salon verlaat.
+                </p>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" onerror="this.src='https://placehold.co/400x300/faf7f2/b45309?text=Botanical+Care'" alt="Botanische haarverzorging" class="w-full h-36 object-cover rounded-2xl" />
+                <img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=500&q=80" onerror="this.src='https://placehold.co/400x300/faf7f2/b45309?text=Head+Spa'" alt="Spa behandeling" class="w-full h-36 object-cover rounded-2xl" />
+              </div>
+            </div>
+          `;
+        } else if (subTab === 'tab2') {
+          body = `
+            <div class="bg-[#FAF7F2] text-[#1C1917] p-7 sm:p-10">
+              <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-8">
+                  <span class="text-[11px] uppercase tracking-[0.2em] text-[#B45309] font-bold">Luxe Prijskaart</span>
+                  <h3 class="font-cormorant text-3xl sm:text-4xl font-bold mt-1">Behandelmenu</h3>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="p-5 rounded-2xl bg-white border border-stone-200/90 flex justify-between items-center gap-4">
+                    <div>
+                      <span class="text-[10px] uppercase tracking-wider text-[#B45309] font-bold">Knippen & Styling • 45 min</span>
+                      <h4 class="font-cormorant text-xl font-bold">Signature Knippen & Blow-dry</h4>
+                      <p class="text-xs text-stone-600 mt-0.5">Inclusief botanisch haarbad, ontspannende hoofdhuidmassage & styling</p>
+                    </div>
+                    <span class="font-bold text-[#B45309] text-base shrink-0">€ 49,50</span>
+                  </div>
+
+                  <div class="p-5 rounded-2xl bg-white border border-stone-200/90 flex justify-between items-center gap-4">
+                    <div>
+                      <span class="text-[10px] uppercase tracking-wider text-[#B45309] font-bold">Kleuren & Balayage • 150 min</span>
+                      <h4 class="font-cormorant text-xl font-bold">Kleuren & Signature Balayage</h4>
+                      <p class="text-xs text-stone-600 mt-0.5">Op maat gemengde ammoniakvrije kleuring, gloss toner, Olaplex & styling</p>
+                    </div>
+                    <span class="font-bold text-[#B45309] text-base shrink-0">€ 145,00</span>
+                  </div>
+
+                  <div class="p-5 rounded-2xl bg-white border border-stone-200/90 flex justify-between items-center gap-4">
+                    <div>
+                      <span class="text-[10px] uppercase tracking-wider text-[#B45309] font-bold">Botanical Head Spa • 60 min</span>
+                      <h4 class="font-cormorant text-xl font-bold">Japanese Botanical Head Spa</h4>
+                      <p class="text-xs text-stone-600 mt-0.5">Kruidenstoombad, dieptereiniging van de hoofdhuid, nek- & schoudermassage</p>
+                    </div>
+                    <span class="font-bold text-[#B45309] text-base shrink-0">€ 85,00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          const services = [
+            'Signature Knippen & Blow-dry (€ 49,50)',
+            'Kleuren & Signature Balayage (€ 145)',
+            'Japanese Botanical Head Spa (€ 85)'
+          ];
+          const dates = ['Morgen', 'Donderdag', 'Vrijdag', 'Zaterdag'];
+          const times = ['10:00', '11:30', '14:00', '16:15'];
+          body = `
+            <div class="bg-[#FAF7F2] text-[#1C1917] p-7 sm:p-10">
+              <div class="max-w-xl mx-auto bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-xs">
+                <span class="text-[11px] uppercase tracking-[0.2em] text-[#B45309] font-bold">Online Reserveren</span>
+                <h3 class="font-cormorant text-3xl font-bold mt-1">Kies uw behandeling, dag & tijdslot</h3>
+
+                <div class="mt-5">
+                  <label class="block text-xs font-bold uppercase text-stone-500 mb-2">1. Selecteer behandeling</label>
+                  <div class="space-y-2">
+                    ${services.map(srv => `
+                      <button type="button" data-salon-srv="${srv}" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold border cursor-pointer transition ${selectedSalonService === srv ? 'bg-[#1C1917] text-[#FAF7F2] border-[#1C1917]' : 'bg-[#FAF7F2] text-stone-800 border-stone-200 hover:border-stone-400'}">
+                        ${srv}
+                      </button>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="block text-xs font-bold uppercase text-stone-500 mb-2">2. Kies gewenste dag</label>
+                  <div class="flex flex-wrap gap-2">
+                    ${dates.map(d => `
+                      <button type="button" data-salon-date="${d}" class="px-3.5 py-2 rounded-full text-xs font-bold border cursor-pointer transition ${selectedSalonDate === d ? 'bg-[#1C1917] text-[#FAF7F2] border-[#1C1917]' : 'bg-white text-stone-700 border-stone-300 hover:border-stone-500'}">
+                        ${d}
+                      </button>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="block text-xs font-bold uppercase text-stone-500 mb-2">3. Beschikbare tijdsloten</label>
+                  <div class="flex flex-wrap gap-2">
+                    ${times.map(t => `
+                      <button type="button" data-salon-time="${t}" class="px-4 py-2 rounded-full text-xs font-bold border cursor-pointer transition ${selectedSalonTime === t ? 'bg-[#B45309] text-white border-[#B45309]' : 'bg-white text-stone-700 border-stone-300 hover:border-stone-500'}">
+                        ${t} uur
+                      </button>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <div class="mt-5 space-y-3">
+                  <input type="text" placeholder="Uw voor- en achternaam" class="w-full border border-stone-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                  <button type="button" class="demo-action-submit w-full bg-[#1C1917] hover:bg-stone-800 text-[#FAF7F2] font-bold py-3 rounded-full text-xs cursor-pointer transition">
+                    Bevestig Afspraak (${selectedSalonDate}, ${selectedSalonTime} uur)
+                  </button>
+                  <div class="demo-action-result hidden p-3.5 rounded-xl bg-amber-50 border border-amber-300 text-stone-900 text-xs font-semibold">
+                    ✓ Afspraak bevestigd voor <strong>${selectedSalonService}</strong> op <strong>${selectedSalonDate} om ${selectedSalonTime} uur</strong>!
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        const footer = `
+          <div class="bg-[#1C1917] text-stone-300 px-6 sm:px-8 py-5 text-xs flex flex-wrap items-center justify-between gap-3">
+            <span class="font-cormorant text-base font-bold text-[#FAF7F2]">MAISON ÉLÉGANCE</span>
+            <span>Hoofdstraat 42 • info@maisonelegance-spa.nl</span>
+          </div>
+        `;
+        return nav + body + footer;
+      }
+
+      /* C) BISTRO DE MARKT (#14261C & #F8F5EE, Playfair Display) */
+      function getBistroHTML(subTab) {
+        const nav = `
+          <div class="bg-[#14261C] text-[#F8F5EE] px-5 sm:px-8 py-4 flex flex-wrap items-center justify-between gap-3 border-b border-emerald-900">
+            <div>
+              <span class="font-playfair text-xl sm:text-2xl font-bold tracking-wide block leading-none">Bistro De Markt</span>
+              <span class="text-[11px] text-emerald-300">Verse Streekkeuken & Wijnbar</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5">
+              ${demoConfigs.bistro.tabs.map(t => `
+                <button type="button" data-demo-sub="${t.id}" class="px-3.5 py-2 rounded-xl text-xs font-bold cursor-pointer transition ${subTab === t.id ? 'bg-[#F8F5EE] text-[#14261C]' : 'text-emerald-100 hover:bg-emerald-900/70'}">
+                  ${t.label}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+
+        let body = '';
+        if (subTab === 'tab1') {
+          body = `
+            <div class="relative bg-[#14261C] text-[#F8F5EE] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" onerror="this.style.display='none'" alt="Bistro De Markt" class="w-full h-72 object-cover opacity-35" />
+              <div class="absolute inset-0 bg-gradient-to-r from-[#14261C] via-[#14261C]/85 to-transparent p-6 sm:p-10 flex flex-col justify-center">
+                <span class="self-start px-3 py-1 rounded-full bg-emerald-400/15 border border-emerald-400/30 text-emerald-200 text-xs font-semibold mb-3">
+                  Dagelijks geopend vanaf 11:00 uur
+                </span>
+                <h2 class="font-playfair text-3xl sm:text-4xl font-bold max-w-lg leading-tight">
+                  Bourgondisch tafelen met pure seizoensproducten
+                </h2>
+                <p class="mt-3 text-emerald-100/85 text-xs sm:text-sm max-w-md leading-relaxed">
+                  Van een uitgebreide lunch op ons zonnige terras tot een sfeervol 3-gangen diner met bijpassende wijnen.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-3">
+                  <button type="button" data-demo-sub="tab3" class="bg-[#10B981] hover:bg-emerald-400 text-slate-950 font-extrabold px-5 py-3 rounded-xl text-xs cursor-pointer transition">
+                    Direct Tafel Reserveren
+                  </button>
+                  <button type="button" data-demo-sub="tab2" class="bg-white/10 hover:bg-white/20 text-[#F8F5EE] font-bold px-5 py-3 rounded-xl text-xs cursor-pointer transition">
+                    Bekijk Menukaart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-10 bg-[#F8F5EE] text-[#14261C]">
+              <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="px-3 py-1 rounded-full bg-emerald-900/10 text-[#14261C] text-xs font-bold">✓ 100% Streekproducten</span>
+                <span class="px-3 py-1 rounded-full bg-emerald-900/10 text-[#14261C] text-xs font-bold">✓ Zonnig Terras</span>
+                <span class="px-3 py-1 rounded-full bg-emerald-900/10 text-[#14261C] text-xs font-bold">✓ Uitgebreide Wijnkaart</span>
+              </div>
+              <blockquote class="max-w-2xl mx-auto text-center italic font-playfair text-xl sm:text-2xl text-[#14261C]">
+                “Wij koken met wat het seizoen en onze lokale boeren ons die week brengen — eerlijk, vers en zonder opsmuk.”
+              </blockquote>
+              <p class="text-center text-xs uppercase tracking-widest text-emerald-800 font-bold mt-2">— Keukenteam Bistro De Markt</p>
+            </div>
+          `;
+        } else if (subTab === 'tab2') {
+          const menuItems = [
+            { name: 'Desembrood Gerookte Zalm & Avocado', desc: 'Gepocheerd eitje, citroen-dille crème & rucola', allergens: 'Allergenen: Vis, Gluten, Ei', price: '€ 14,50', cat: 'Lunch' },
+            { name: 'Limburgs Stoofvlees van Runderwang', desc: 'Donker abdijbier, huisgemaakte friet & witlofsalade', allergens: 'Allergenen: Gluten, Sulfiet', price: '€ 22,50', cat: 'Diner' },
+            { name: 'Geroosterde Bloemkoolsteak (Vega)', desc: 'Saffraancrème, granaatappel & geroosterde amandel', allergens: 'Allergenen: Noten, Lactose', price: '€ 19,50', cat: 'Diner' },
+            { name: 'Bourgondische Borrelplank De Markt', desc: 'Oude boerenkaas, gedroogde ham, olijven & dippers', allergens: 'Allergenen: Lactose, Gluten', price: '€ 18,00', cat: 'Borrel & Wijn' },
+            { name: 'Proeverij van 3 Seizoenswijnen', desc: 'Wit, rosé of rood naar keuze met bijpassende amuse', allergens: 'Allergenen: Sulfiet', price: '€ 16,50', cat: 'Borrel & Wijn' },
+            { name: 'Carpaccio Truffel & Parmezaan', desc: 'Pijnboompitten, zongedroogde tomaat & kruidensla', allergens: 'Allergenen: Lactose, Noten', price: '€ 13,50', cat: 'Lunch' }
+          ];
+          const categories = ['Alles', 'Lunch', 'Diner', 'Borrel & Wijn'];
+          const visibleItems = bistroFilter === 'Alles' ? menuItems : menuItems.filter(m => m.cat === bistroFilter);
+
+          body = `
+            <div class="p-6 sm:p-10 bg-[#F8F5EE] text-[#14261C]">
+              <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">Interactieve Menukaart</span>
+                  <h3 class="font-playfair text-2xl sm:text-3xl font-bold">Onze Seizoenskaart</h3>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  ${categories.map(cat => `
+                    <button type="button" data-bistro-filter="${cat}" class="px-3.5 py-2 rounded-xl text-xs font-bold cursor-pointer transition ${bistroFilter === cat ? 'bg-[#14261C] text-[#F8F5EE]' : 'bg-white text-[#14261C] border border-stone-300 hover:bg-stone-100'}">
+                      ${cat}
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                ${visibleItems.map(item => `
+                  <div class="p-4 rounded-2xl bg-white border border-stone-200 flex justify-between items-start gap-4">
+                    <div>
+                      <span class="inline-block text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 mb-1">${item.cat}</span>
+                      <h4 class="font-playfair font-bold text-base text-[#14261C]">${item.name}</h4>
+                      <p class="text-xs text-stone-600 mt-1">${item.desc}</p>
+                      <span class="block text-[11px] text-stone-400 mt-1.5">${item.allergens}</span>
+                    </div>
+                    <span class="font-extrabold text-[#14261C] text-sm shrink-0">${item.price}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        } else {
+          const guestOptions = ['2 personen', '4 personen', '6 personen'];
+          const dateOptions = ['Vandaag', 'Vrijdagavond', 'Zaterdagavond', 'Zondag'];
+          const timeOptions = ['12:30', '18:00', '19:00', '20:15'];
+          body = `
+            <div class="p-6 sm:p-10 bg-[#F8F5EE] text-[#14261C]">
+              <div class="max-w-xl mx-auto bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-xs">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">Direct Reserveren</span>
+                <h3 class="font-playfair text-2xl sm:text-3xl font-bold mt-1">Reserveer uw tafel</h3>
+
+                <div class="mt-5">
+                  <label class="block text-xs font-bold uppercase text-stone-500 mb-2">1. Aantal personen</label>
+                  <div class="flex flex-wrap gap-2">
+                    ${guestOptions.map(g => `
+                      <button type="button" data-bistro-guests="${g}" class="px-4 py-2 rounded-xl text-xs font-bold border cursor-pointer transition ${selectedBistroGuests === g ? 'bg-[#14261C] text-[#F8F5EE] border-[#14261C]' : 'bg-[#F8F5EE] text-stone-800 border-stone-300'}">
+                        ${g}
+                      </button>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="block text-xs font-bold uppercase text-stone-500 mb-2">2. Gewenste dag</label>
+                  <div class="flex flex-wrap gap-2">
+                    ${dateOptions.map(d => `
+                      <button type="button" data-bistro-date="${d}" class="px-3.5 py-2 rounded-xl text-xs font-bold border cursor-pointer transition ${selectedBistroDate === d ? 'bg-[#14261C] text-[#F8F5EE] border-[#14261C]' : 'bg-[#F8F5EE] text-stone-800 border-stone-300'}">
+                        ${d}
+                      </button>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="block text-xs font-bold uppercase text-stone-500 mb-2">3. Tijdslot</label>
+                  <div class="flex flex-wrap gap-2">
+                    ${timeOptions.map(t => `
+                      <button type="button" data-bistro-time="${t}" class="px-4 py-2 rounded-xl text-xs font-bold border cursor-pointer transition ${selectedBistroTime === t ? 'bg-emerald-700 text-white border-emerald-700' : 'bg-[#F8F5EE] text-stone-800 border-stone-300'}">
+                        ${t} uur
+                      </button>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <div class="mt-5 space-y-3">
+                  <input type="text" placeholder="Naam reservering" class="w-full border border-stone-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                  <button type="button" class="demo-action-submit w-full bg-[#14261C] hover:bg-emerald-950 text-[#F8F5EE] font-bold py-3 rounded-xl text-xs cursor-pointer transition">
+                    Bevestig Tafel (${selectedBistroGuests}, ${selectedBistroDate} ${selectedBistroTime} uur)
+                  </button>
+                  <div class="demo-action-result hidden p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-950 text-xs font-semibold">
+                    ✓ Uw tafel voor <strong>${selectedBistroGuests}</strong> op <strong>${selectedBistroDate} om ${selectedBistroTime} uur</strong> is gereserveerd!
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        const footer = `
+          <div class="bg-[#14261C] text-emerald-200/80 px-6 sm:px-8 py-5 text-xs flex flex-wrap items-center justify-between gap-3 border-t border-emerald-900">
+            <span class="font-playfair font-bold text-[#F8F5EE]">Bistro De Markt</span>
+            <span>Marktplein 14 • Dagelijks geopend vanaf 11:00 uur</span>
+          </div>
+        `;
+        return nav + body + footer;
+      }
+
+      function buildDemoHTML(branchKey, subTab) {
+        if (branchKey === 'maison') return getMaisonHTML(subTab);
+        if (branchKey === 'bistro') return getBistroHTML(subTab);
+        return getVanDijkHTML(subTab);
+      }
+
+      function bindDemoEvents(container) {
+        if (!container) return;
+
+        container.querySelectorAll('[data-demo-sub]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            currentSubTab = btn.getAttribute('data-demo-sub');
+            renderCurrentDemo();
+          });
+        });
+
+        container.querySelectorAll('[data-bistro-filter]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            bistroFilter = btn.getAttribute('data-bistro-filter');
+            renderCurrentDemo();
+          });
+        });
+
+        container.querySelectorAll('[data-salon-srv]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectedSalonService = btn.getAttribute('data-salon-srv');
+            renderCurrentDemo();
+          });
+        });
+
+        container.querySelectorAll('[data-salon-date]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectedSalonDate = btn.getAttribute('data-salon-date');
+            renderCurrentDemo();
+          });
+        });
+
+        container.querySelectorAll('[data-salon-time]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectedSalonTime = btn.getAttribute('data-salon-time');
+            renderCurrentDemo();
+          });
+        });
+
+        container.querySelectorAll('[data-bistro-guests]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectedBistroGuests = btn.getAttribute('data-bistro-guests');
+            renderCurrentDemo();
+          });
+        });
+
+        container.querySelectorAll('[data-bistro-date]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectedBistroDate = btn.getAttribute('data-bistro-date');
+            renderCurrentDemo();
+          });
+        });
+
+        container.querySelectorAll('[data-bistro-time]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectedBistroTime = btn.getAttribute('data-bistro-time');
+            renderCurrentDemo();
+          });
+        });
+
+        container.querySelectorAll('.demo-action-submit').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const res = btn.parentElement ? btn.parentElement.querySelector('.demo-action-result') : null;
+            if (res) res.classList.remove('hidden');
+          });
+        });
+      }
+
+      function renderCurrentDemo() {
+        const cfg = demoConfigs[currentDemoKey];
+        const urlDisplay = document.getElementById('demo-url-display');
+        const renderArea = document.getElementById('demo-render-area');
+        const fsUrl = document.getElementById('fs-demo-url');
+        const fsBody = document.getElementById('fs-demo-body');
+
+        const html = buildDemoHTML(currentDemoKey, currentSubTab);
+
+        if (urlDisplay) urlDisplay.textContent = cfg.url;
+        if (renderArea) {
+          renderArea.innerHTML = html;
+          bindDemoEvents(renderArea);
+        }
+        if (fsUrl) fsUrl.textContent = cfg.url;
+        if (fsBody) {
+          fsBody.innerHTML = html;
+          bindDemoEvents(fsBody);
+        }
+      }
+
+      function selectDemoBranch(key) {
+        if (!demoConfigs[key]) return;
+        currentDemoKey = key;
+        currentSubTab = 'tab1';
+
+        document.querySelectorAll('.demo-branch-btn').forEach(btn => {
+          const active = btn.getAttribute('data-demo-branch') === key;
+          if (active) {
+            btn.classList.add('bg-[#6366F1]', 'text-white', 'shadow-md', 'shadow-indigo-600/20');
+            btn.classList.remove('glass-card', 'text-slate-300', 'hover:text-white');
+          } else {
+            btn.classList.remove('bg-[#6366F1]', 'text-white', 'shadow-md', 'shadow-indigo-600/20');
+            btn.classList.add('glass-card', 'text-slate-300', 'hover:text-white');
+          }
+        });
+
+        renderCurrentDemo();
+      }
+
+      document.querySelectorAll('.demo-branch-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selectDemoBranch(btn.getAttribute('data-demo-branch'));
+        });
+      });
+
+      document.querySelectorAll('[data-open-demo]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-open-demo');
+          navigateTo('demos');
+          selectDemoBranch(target);
+        });
+      });
+
+      // Desktop (100%) vs Mobiel (390px) schakelaar
+      const btnDesktop = document.getElementById('btn-view-desktop');
+      const btnMobile = document.getElementById('btn-view-mobile');
+      const frameContainer = document.getElementById('demo-frame-container');
+
+      if (btnDesktop && btnMobile && frameContainer) {
+        btnDesktop.addEventListener('click', () => {
+          frameContainer.style.maxWidth = '100%';
+          btnDesktop.classList.add('bg-[#6366F1]', 'text-white');
+          btnDesktop.classList.remove('text-slate-400', 'hover:text-white');
+          btnMobile.classList.remove('bg-[#6366F1]', 'text-white');
+          btnMobile.classList.add('text-slate-400', 'hover:text-white');
+        });
+
+        btnMobile.addEventListener('click', () => {
+          frameContainer.style.maxWidth = '390px';
+          btnMobile.classList.add('bg-[#6366F1]', 'text-white');
+          btnMobile.classList.remove('text-slate-400', 'hover:text-white');
+          btnDesktop.classList.remove('bg-[#6366F1]', 'text-white');
+          btnDesktop.classList.add('text-slate-400', 'hover:text-white');
+        });
+      }
+
+      // Volledig Scherm Modal
+      const fsModal = document.getElementById('fullscreen-demo-modal');
+      const btnOpenFs = document.getElementById('btn-open-fullscreen-demo');
+      const btnCloseFs = document.getElementById('btn-close-fullscreen-demo');
+
+      if (btnOpenFs && fsModal) {
+        btnOpenFs.addEventListener('click', () => {
+          renderCurrentDemo();
+          fsModal.classList.remove('hidden');
+        });
+      }
+
+      if (btnCloseFs && fsModal) {
+        btnCloseFs.addEventListener('click', () => {
+          fsModal.classList.add('hidden');
+        });
+      }
+
+      // Eerste demo direct inladen
+      renderCurrentDemo();
+    });
+  </script>
+</body>
+</html>
